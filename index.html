@@ -14,6 +14,7 @@
      	$('#animation').hide();
 	
 		$('#submit').click(function(e) {
+		e.preventDefault();
        		$('#animation').show();
 		var username = $('#username').val();
 		var password = $('#password').val();
