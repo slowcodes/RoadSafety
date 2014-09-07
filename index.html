@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -6,39 +7,22 @@
   <meta charset="UTF-8">
 
   <title>:: Federal Road Safety Commission FRSC ::</title>
- <script src="jquery.min.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  
  <script type="text/javascript">
  	$(document).ready(function(e) {
      	$('#animation').hide();
 	
 		$('#submit').click(function(e) {
-			e.preventDefault();
        		$('#animation').show();
-			var username = $('#username').val();
-			var password = $('#password').val();
-			$.ajax({
-				url:'auth.php',
-				timeout:'10000',
-				data:{username:username,password:password},
-				type:'POST',
-				dataType:"json",
-				success: function(msg){
-					if(msg.error){
-						//login failed
-						$('#warnming').html("<font size='1' color='red'><i>Incorrect username and password</i></font>");
-					}
-					else{
-						window.location = "home.html";	
-					}
-				},
-				error: function(){
-					
-				},
-				complete: function(){
-					
-				}
-			});
+		var username = $('#username').val();
+		var password = $('#password').val();
+		if((username == 'admin') && (password == 'elvis')){
+			window.location = "home.html";
+		}
+		else{
+			$('#warnming').html("<font size='1' color='red'><i>incorrect username and password</i></font>");
+		}
 		
     	});   
     });
@@ -182,6 +166,7 @@ input[type="submit"] { cursor: pointer; }
 	width: 20px;
 }
 	</style>
+<body>
 
   <html lang="en-US">
 <head>
@@ -200,11 +185,11 @@ input[type="submit"] { cursor: pointer; }
 
     <div id="login-form">
 
-        <h3><img src="http://henarc.com.ng/host/frsc.png">Login</h3>
+        <h3><img src="frsc.png">Login</h3>
 		
         <fieldset>
-	<center><div id="animation"><img src="http://henarc.com.ng/host/loaderA64.gif" /></div></center>
-            <form  method="get" >
+			<center><div id="animation"><img src="loaderA64.gif" /></div></center>
+            <form method="get" >
 				<div id="warnming" align="center"> </div>
                 <input type="email" id="username" required value="Email" onBlur="if(this.value=='')this.value='Email'" onFocus="if(this.value=='Email')this.value='' "> <!-- JS because of IE support; better: placeholder="Email" -->
 
