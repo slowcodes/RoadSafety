@@ -27,7 +27,17 @@ $(document).ready(function(e) {
 	plate[2] = "LA912IKJ";
 	plate[3] = "EN219NSK";
 	$('#report').click(function(e) {
-		alert("Complete Functionality will be available in the update version");
+		//alert("Complete Functionality will be available in the update version");
+		function alertDismissed() {
+    		// do nothing
+		}
+
+		navigator.notification.alert(
+    		'Complete Functionality will be available in the update version!',  // message
+    		alertDismissed,         // callback
+    		'FRSC Andriod App',            // title
+    		'Done'                  // buttonName
+		);
 
 	});
 	
@@ -48,14 +58,33 @@ $(document).ready(function(e) {
 			
 		}
 		if(found == 1){
-			alert("Found");	
+			//alert("Found");	
+			function alertDismissed() {
+    			// do nothing
+			}
 
+			navigator.notification.alert(
+    			'Found!',  // message
+    			alertDismissed,         // callback
+    			'FRSC Andriod App',            // title
+    			'Done'                  // buttonName
+			);
+		}
+		else{
+			//alert("Not Found");
+			function alertDismissed() {
+    			// do nothing
 			}
-			else{
-				alert("Not Found");
-				$('#result').html("Not Found");
+
+			navigator.notification.alert(
+    			'Not Found!',  // message
+    			alertDismissed,         // callback
+    			'FRSC Andriod App',            // title
+    			'Done'                  // buttonName
+			);			
+			$('#result').html("Not Found");
 	
-			}
+		}
 		
     });
 	
